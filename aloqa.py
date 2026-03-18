@@ -1,9 +1,13 @@
+import os
 import telebot
 from telebot import types
 from flask import Flask, request
 
-TOKEN = ""
-ADMIN_ID =
+from dotenv import load_dotenv
+load_dotenv()
+
+TOKEN = os.getenv("BOT_TOKEN")
+ADMIN_ID = int(os.getenv("ADMIN_ID"))
 
 bot = telebot.TeleBot(TOKEN)
 app = Flask(__name__)
